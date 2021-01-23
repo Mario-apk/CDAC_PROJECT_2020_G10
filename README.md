@@ -6,6 +6,7 @@ Employee Turnover or Employee Turnover ratio is the measurement of the total num
 A Company uses this predictive analysis to measure how many employees they will need if the potential employees will leave their organization. A company also uses this predictive analysis to make the workplace better for employees by understanding the core reasons for the high turnover ratio.
 
 dependent variable : 'left'
+
 independent variable : ''satisfaction_level', 'last_evaluation', 'number_project',
        'average_montly_hours', 'time_spend_company', 'Work_accident',
        'promotion_last_5years', 'sales', 'salary'' 
