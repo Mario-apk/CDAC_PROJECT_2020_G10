@@ -11,7 +11,10 @@ independent variable : ''satisfaction_level', 'last_evaluation', 'number_project
        'average_montly_hours', 'time_spend_company', 'Work_accident',
        'promotion_last_5years', 'sales', 'salary'' 
        
-       
+Dataset size : 554KB
+Rows:  15000
+columns: 10
+
        
 As we know left is dependent variable and its is discrete value . like 0 & 1 and T & F
 
@@ -23,3 +26,10 @@ Decision tree regression
 
 Random forest regression
 
+K Neighbours Classifier
+
+Decision Tree
+
+Gradient Boosting Classifier
+
+XGBoost Classifier
