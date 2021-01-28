@@ -1,10 +1,18 @@
-#Databalance.py 
+"""# **Data Balance using smote** """
+
+from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import SMOTENC
 
 def balance_data(X,y):
-	nHead = int(len(df_obj)*0.85)
-	nTail = int(len(df_obj)*0.15)
-	X_train = df_obj.drop("left", axis=1).head(nHead)
-	X_test  = df_obj.drop("left", axis=1).tail(nTail)
-	Y_train = df_obj["left"].head(nHead)
-	Y_test = df_obj["left"].tail(nTail)
-	X_train.shape, X_test.shape
+    y=y.astype('int64')
+    xtrain,xtest,ytrain,ytest=train_test_split(X,y,test_size=0.3,stratify=y)
+    smotenc = SMOTENC([0,1,2,3,4,5])
+    X_train,y_train = smotenc.fit_resample(xtrain,ytrain)
+    #print(y_train.value_counts())
+    
+    return X_train,y_train,xtest,ytest
+
+X_train,y_train,xtest,ytest = balance_data(X,y)
+
+new_series = pd.Series(y_train)
+new_series.value_counts()
