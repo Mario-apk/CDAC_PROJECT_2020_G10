@@ -6,13 +6,8 @@ models
 #from DataInfo import *
 #from Preprocessing import * 
 
-
 from sklearn.metrics import classification_report
 
-
-# WHAT IS FEATURENSCALING
-#How to find neighbours in knn
-# SMOTE method for upsampling so that data will be balanced
 
 def model_option(X_train,X_test,Y_train,Y_test,ch):
     
