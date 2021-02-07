@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """ main """
 
-import numpy as np
 import pandas as pd
 from DataInfo import *
 from Models import *
@@ -10,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
+from NewModel import rforest
 
 df=pd.read_csv(r'C:/Users/Anshit/Downloads/datasets_9768_13874_HR_comma_sep.csv')
 
@@ -35,12 +35,16 @@ X=df1.loc[:, df1.columns != 'left']
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.3,random_state=0)
 
 
-#balancing training dataset usinf SMOTE technique
+# SMOTE method for upsampling so that data will be balanced
 
 smt=SMOTE()
 X_train_sm, Y_train_sm= smt.fit_resample(X_train,Y_train)
 
 
+rforest(X_train_sm,X_test,Y_train_sm,Y_test)
+
+
+'''
 flag=True
 while(flag==True):
     print(" \n 1. Logistic Regression \n \
@@ -51,11 +55,12 @@ while(flag==True):
     ch=int(input("Enter the model no: "))
  
     
-    if 0<ch<7:
+    if 0<ch<8:
         model_option(X_train_sm,X_test,Y_train_sm,Y_test,ch)
     elif ch==8:
         flag=False
     else:
         print("enter proper input")
         
-print("that's it")
+print("thank you")
+'''
